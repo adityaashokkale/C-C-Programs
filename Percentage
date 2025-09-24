@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    float s1, s2, s3, s4, total, per;
+    printf("Enter marks of four subjects: ");
+    scanf("%f %f %f %f", &s1, &s2, &s3, &s4);
+
+    total = s1 + s2 + s3 + s4;
+    per = (total / 400);
+    
+    printf("Total = %.2f\n", total);
+    printf("Percentage = %.2f%%\n", per * 100);
+    return 0;
+}
