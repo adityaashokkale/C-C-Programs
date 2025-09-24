@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int a, b, c, d, e, f, ch;
+    printf("Enter 1st No\n");
+    scanf("%d",&a);
+    printf("Enter 2nd No\n");
+    scanf("%d",&b);
+    while(1)
+    {
+        printf("\n1, addition \n");
+        printf("\n2, subtraction \n");
+        printf("\n3, multiplication\\Even \n");
+        printf("\n4, division \n");
+        printf("\n5, Exit \n");
+        printf("\nEnter your choice : ");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+            c=a+b;
+            printf("%d",c);
+            break;
+            case 2:
+            d=a-b;
+            printf("%d",d);
+            break;
+            case 3:
+            e=a*b;
+            printf("%d",e);
+            break;
+            case 4:
+            f=a/b;
+            printf("%d",f);
+            break;
+            case 5:
+            printf("\n\n\t\t\t not valid !\n\n\n");
+            exit(0);
+            // Terminates the complete program execution
+        }
+    }
+}
