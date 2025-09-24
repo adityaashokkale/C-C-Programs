@@ -1,0 +1,97 @@
+// Write a menu driven C Program using while loop or switch case to perform the following matrix operations:
+// a) Addition of two matrices
+// b) Subtraction of two matrices
+// Transpose of Matrix
+// d) Exit
+
+#include <stdio.h>
+#define MAX 10
+void add(int a[MAX][MAX], int b[MAX][MAX], int r, int c) {
+    int sum[MAX][MAX];
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    printf("Sum of matrices:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+}
+void subtract(int a[MAX][MAX], int b[MAX][MAX], int r, int c) {
+    int diff[MAX][MAX];
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            diff[i][j] = a[i][j] - b[i][j];
+        }
+    }
+    printf("Difference of matrices:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%d ", diff[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void transpose(int a[MAX][MAX], int r, int c) {
+    int  eff[MAX][MAX];
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            eff[j][i] = a[i][j];
+        }
+    }
+    printf("Transpose of matrix:\n");
+    for (int i = 0; i < c; i++) {
+        for (int j = 0; j < r; j++) {
+            printf("%d ", eff[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int a[MAX][MAX], b[MAX][MAX], r, c, choice;
+    printf("Enter number of rows and columns (max %d): ", MAX);
+    scanf("%d %d", &r, &c);
+    printf("Enter elements of first matrix:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("Enter elements of second matrix:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Addition of two matrices\n");
+        printf("2. Subtraction of two matrices\n");
+        printf("3. Transpose of first matrix\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                add(a, b, r, c);
+                break;
+            case 2:
+                subtract(a, b, r, c);
+                break;
+            case 3:
+                transpose(a, r, c);
+                break;
+            case 4:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+    return 0;
+}
